@@ -1,0 +1,15 @@
+[package]
+name = "ignite-rs"
+description = "Apache ignite client"
+authors = ["BorisZhguchev <zhguchev@gmail.com>"]
+license-file = "LICENSE"
+version = "0.1.0"
+edition = "2018"
+homepage = "https://github.com/besok/ignite-rs"
+repository = "https://github.com/besok/ignite-rs"
+readme = "README.md"
+keywords = ["ignite", "apache-ignite","client"]
+categories = ["development-tools","api"]
+
+
+[dependencies]
