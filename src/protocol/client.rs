@@ -11,7 +11,7 @@ pub struct IgniteClient{
 impl IgniteClient {
     fn connect(cfg:IgniteClientCfg) -> Result<Self,HandshakeError>{
         let request = handshake_request(cfg.username.clone(),cfg.password.clone(),cfg.major,cfg.minor,cfg.patch)?;
-        let mut stream = TcpStream::connect(cfg.address())?;
+        let mut stream = TcpStream::connect(cfg.nodes.get(0).unwrap().address())?;
         stream.write_all(request.as_slice())?;
         handshake_response(&mut stream)?;
         Ok(IgniteClient{stream,cfg})
